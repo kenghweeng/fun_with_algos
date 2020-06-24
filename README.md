@@ -1,1 +1,1 @@
-# Documenting hacking Coursera Algorithms Specialisation in 7 days.
+Having fun with Coursera Algorithms Specialisation :)
