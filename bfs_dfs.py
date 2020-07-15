@@ -1,22 +1,37 @@
-# def bfs(graph, start):
-#     visited, queue = set(), [start]
-#     while queue:
-#         vertex = queue.pop(0)
-#         if vertex not in visited:
-#             visited.add(vertex)
-#             queue.extend(graph[vertex] - visited)
-#     return visited
-#
+def bfs(graph, start):
+    visited, queue = set(), [start]
+    while queue:
+        vertex = queue.pop(0)
+        if vertex not in visited:
+            visited.add(vertex)
+            queue.extend(graph[vertex] - visited)
+    return visited
+
+def bfs2(graph, node):
+    visited, queue =  set(), [node]
+    visited.add(node) # add initial starting node.
+    while queue:
+        vertex = queue.pop(0)
+        for edge in graph[vertex]:
+            if edge not in visited:
+                visited.add(edge)
+                queue.append(edge)
 # '''
 # Iterative version:
 # '''
-# def dfs(graph, start):
-#     visited, stack = set(), [start]
+
+# def dfs_iterative(graph, start):
+#     stack, path = [start], []
+#
 #     while stack:
 #         vertex = stack.pop()
-#         if vertex not in visited:
-#             stack.extend(graph[vertex] - visited)
-#     return visited
+#         if vertex in path:
+#             continue
+#         path.append(vertex)
+#         for neighbor in graph[vertex]:
+#             stack.append(neighbor)
+#
+#     return path
 
 '''
 Recursive version
